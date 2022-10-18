@@ -1,4 +1,4 @@
-##**Voici notre projet python : Tetris**
+## **Voici notre projet python : Tetris**
 
 Tetris se joue sur un quadrillage, appelé la matrice, possédant une gravité (du haut vers le bas). Des formes géométriques, composées de quatre carrés, tombent depuis le haut de l'écran. Le joueur doit contrôler la chute de ces pièces :
 
