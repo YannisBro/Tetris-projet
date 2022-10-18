@@ -14,3 +14,8 @@ Le but du jeu est de former des lignes : lorsqu'un bloc termine une ou plusieurs
 ____________________________________________________________________________________________________________________________________________________________
 
 **Décomposition en sous problème :**
+
+- Création des différentes formes de bloc
+- Fonction permettant de supprimer une ligne quand elle est complète
+- Pouvoir controler le bloc qui desend
+- Choisir aléatoirement le bloc
