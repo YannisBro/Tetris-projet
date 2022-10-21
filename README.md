@@ -22,3 +22,14 @@ ________________________________________________________________________________
 - Créer une variable de score
 - Modéliser le plateau de jeux
 - Fonction pour la rotation des blocs
+
+____________________________________________________________________________________________________________________________________________________________
+
+**Minimum viable Product :**
+
+- Création d'un plan de jeux et création des différents bloc
+- Pouvoir gerer les mouvements des bloc (tourner, gauche, droite, descendre)
+- Système de score
+- Repèrer quand une ligne est complète et la supprimer
+
+*Pour cela je vais utiliser pygame et la blibliothèque random avec des fonctions pour définir chaque bloc et leur mouvement*
