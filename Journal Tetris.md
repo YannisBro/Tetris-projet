@@ -4,15 +4,13 @@
 
 _Avancé :_
 
-- 
-- 
-- 
+- Création des différente forme de bloc
+- Création du plateau de jeux
+- Début d'interface
 
 _Problème rencontré :_
 
-- 
--
-
+- Comment définir la forme des blocs
 
 _____________________________________________________________________________________________________________________________________________________________
 
@@ -20,16 +18,12 @@ ________________________________________________________________________________
 
 _Avancé :_
 
-- 
-- 
-- 
-- 
-
+- Définition de la class des différents bloc
+- Fonction pour faire descendre les bloc
 
 _Problème rencontré :_
 
--
--
+- Bloc qui ne voulait pas descendre ( Problème résolue )
 
 _____________________________________________________________________________________________________________________________________________________________
 
