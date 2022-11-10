@@ -20,6 +20,7 @@ _Avancé :_
 
 - Définition de la class des différents bloc
 - Fonction pour faire descendre les bloc
+- Création du score
 
 _Problème rencontré :_
 
@@ -52,7 +53,7 @@ _Avancé :_
 _Problème rencontré :_
 
 - Bug du game over
-- 
+- Score bug
 
 _____________________________________________________________________________________________________________________________________________________________
 
