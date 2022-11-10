@@ -46,8 +46,8 @@ ________________________________________________________________________________
 _Avancé :_
 
 - Création de l'écran game over
-- 
-- 
+- Création des actions sur les touches du clavier
+- Reglage de bug
 
 _Problème rencontré :_
 
