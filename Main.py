@@ -59,7 +59,7 @@ class Figure:
 class Tetris:
     level = 2 # DÃ©finir le difficultÃ© du niveau ( Vitesse de tombÃ© )
     score = 0 # Variable du score
-    state = "start" # Le jeux commence sur "Start"
+    statue = "start" # Le jeux commence sur "Start"
     x = 100 # Position x du tableau sur le fond
     y = 60  # Position y du tableau sur le fond
     zoom = 20 # Taille du tableau sur le fond
@@ -70,7 +70,7 @@ class Tetris:
         self.width = width # Largeur du tableau
         self.field = [] # Case vide du tableau
         self.score = 0 # DÃ©finition du score du 0
-        self.state = "start" # On commence le jeux sur l'Ã©tat "Start"
+        self.statue = "start" # On commence le jeux sur l'Ã©tat "Start"
         
         # CrÃ©ation du tableau tout les x hauteur et tout les x largeur
         
@@ -136,7 +136,7 @@ class Tetris:
         self.break_lines() # regarde si on peut casser la ligne
         self.new_figure() # Fait appelle a une nouvelle figure
         if self.intersects():
-            self.state = "gameover" # Si un bloc freeze touche un autre bloc freeze = game over
+            self.statue = "gameover" # Si un bloc freeze touche un autre bloc freeze = game over
 
     def go_side(self, dx): # Pour dÃ©placer le bloc sur les cotÃ©s
         old_x = self.figure.x
@@ -167,21 +167,20 @@ done = False
 clock = pygame.time.Clock()
 fps = 25
 game = Tetris(20, 10)
-counter = 0
+compteur = 0
 
-pressing_down = False
 
 while not done:
     if game.figure is None:
         game.new_figure()
-    counter += 1
-    if counter > 100000:
-        counter = 0
+    compteur += 1
+    if compteur > 100000:
+        compteur = 0
 
 # Faire descendre les bloc proportionellement au nombre d'fps
 
-    if counter % (fps // game.level // 2) == 0 :
-        if game.state == "start":
+    if compteur % (fps // game.level // 2) == 0 :
+        if game.statue == "start":
             game.go_down()
 
 # DÃ©finition des touches de clavier pour les actions du jeux
@@ -198,9 +197,7 @@ while not done:
                 game.go_side(1)
 
 
-    if event.type == pygame.KEYUP:
-            if event.key == pygame.K_SPACE:
-                pressing_down = False
+
 
     screen.blit(espace, (0, 0))
 
@@ -227,17 +224,17 @@ while not done:
 
 # DÃ©finition des diffÃ©rents texte
 
-    font = pygame.font.SysFont('Comic Sans MS', 25, True, False)
-    font1 = pygame.font.SysFont('Calibri', 65, True, False)
-    text = font.render("Score: " + str(game.score), True, BLEU)
-    text_game_over = font1.render("Game Over", True, (BLEU))
+    police2 = pygame.font.SysFont('Comic Sans MS', 25, True, False)
+    police1 = pygame.font.SysFont('Calibri', 65, True, False)
+    texte = police2.render("Score: " + str(game.score), True, BLEU)
+    texte_game_over = police1.render("Game Over", True, (BLEU))
 
-    screen.blit(text, [150, 0]) # Afficher le score
+    screen.blit(texte, [150, 0]) # Afficher le score
 
 # DÃ©finition du game over
 
-    if game.state == "gameover": # On passe l'Ã©tat du jeux en mode game over
-        screen.blit(text_game_over, [50, 200])
+    if game.statue == "gameover": # On passe l'Ã©tat du jeux en mode game over
+        screen.blit(texte_game_over, [50, 200])
 
 
 
