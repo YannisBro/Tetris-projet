@@ -1,4 +1,4 @@
-# Crée par Yannis Bronnec et Gaya Slimani.
+# CrÃ©e par Yannis Bronnec et Gaya Slimani.
 
 import pygame
 import random
@@ -6,7 +6,7 @@ import random
 
 espace = pygame.image.load("fond.jpg")
 
-# Définition de la couleur des diffÃ©rents bloc
+# DÃ©finition de la couleur des diffÃ©rents bloc
 
 couleur = [
     (0, 0, 0),
@@ -17,6 +17,14 @@ couleur = [
     (96, 255, 84),
     (255, 15, 239),
 ]
+
+# Definition de couleur
+
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+GRIS = (128, 128, 128)
+BLEU = (0,204,203)
+CYAN = (169,234,254)
 
 # DÃ©finition de la forme des diffÃ©rentes figures et leur rotation
 
@@ -147,13 +155,6 @@ class Tetris:
 
 pygame.init()
 
-# Definition de couleur
-
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-GRIS = (128, 128, 128)
-BLEU = (0,204,203)
-CYAN = (169,234,254)
 
 size = (400, 500)
 screen = pygame.display.set_mode(size)
