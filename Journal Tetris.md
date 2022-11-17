@@ -61,26 +61,25 @@ ________________________________________________________________________________
 
 _Avancé :_
 
-- 
--
--
+- Ajoute d'une musique
+- Ajout d'un fonction pour aller plus vite
 
 _Problème rencontré :_
 
-- 
+- Bloc qui ne s'arretais pas d'aller vite
 _____________________________________________________________________________________________________________________________________________________________
 
 **JOUR 6**
 
 _Avancé :_
 
-- 
-- 
+- Ajout d'une fonction pour téléporter le bloc
+- Ajout d'une fonction pour relancer le jeux après Game over
 
 _Problème rencontré :_
 
-- 
-- 
+- Jeux qui crashait quand on relancais (réglé)
+
 _____________________________________________________________________________________________________________________________________________________________
 
 **JOUR 7**
