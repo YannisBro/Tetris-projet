@@ -33,3 +33,5 @@ ________________________________________________________________________________
 - Repèrer quand une ligne est complète et la supprimer
 
 *Pour cela je vais utiliser pygame et la blibliothèque random avec des fonctions pour définir chaque bloc et leur mouvement*
+
+à l'aide d'internet pour quelques fonctions
