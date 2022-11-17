@@ -27,8 +27,8 @@ ________________________________________________________________________________
 
 **Minimum viable Product :**
 
-- Création d'un plan de jeux et création des différents bloc
-- Pouvoir gerer les mouvements des bloc (tourner, gauche, droite, descendre)
+- Création d'un plan de jeux et création des différents blocs
+- Pouvoir gerer les mouvements des blocs (tourner, gauche, droite, descendre)
 - Système de score
 - Repèrer quand une ligne est complète et la supprimer
 
