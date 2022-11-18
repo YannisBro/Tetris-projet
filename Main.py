@@ -6,6 +6,7 @@ import random
 espace = pygame.image.load("fond.jpg")
 
 pygame.mixer.init()
+Break = pygame.mixer.Sound("Break.mp3")
 ThemeT = pygame.mixer.Sound("Theme.mp3")
 ThemeT.play()
 
@@ -119,12 +120,14 @@ class Tetris:
                 if self.field[i][j] == 0:
                     zeros += 1
             if zeros == 0:
-                lines += 1
+                lines += 9
                 for i1 in range(i, 1, -1):
                     for j in range(self.width):
                         self.field[i1][j] = self.field[i1 - 1][j] 
         
-        self.score += lines ** 2 # On rajoute 1 au score
+        self.score += lines # On rajoute 9 au score quand on casse une ligne 
+        self.score += 2 # On rajoute 2 au score quand on place un bloc
+        Break.play()
 
     def go_space(self): 
         """Permet de téléporter le bloc pour aller + vite"""
@@ -148,6 +151,7 @@ class Tetris:
                     self.field[i + self.figure.y][j + self.figure.x] = self.figure.color
         self.break_lines() # regarde si on peut casser la ligne
         self.new_figure() # Fait appelle a une nouvelle figure
+        
         if self.intersects():
             self.statue = "gameover" # Si un bloc freeze touche un autre bloc freeze = game over
 
@@ -198,26 +202,29 @@ while not done:
     if compteur % (fps // game.level // 2) == 0 or pressing_down :
         if game.statue == "start":
             game.go_down()
+            
 
 # Définition des touches de clavier pour les actions du jeux
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
+        if event.type == pygame.KEYDOWN :
+            if event.key == pygame.K_UP and game.statue == "start":
                 game.rotate()
-            if event.key == pygame.K_DOWN:
+            if event.key == pygame.K_DOWN and game.statue == "start" :
                 game.go_space()  
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_LEFT and game.statue == "start" :
                 game.go_side(-1)
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_RIGHT and game.statue == "start" :
                 game.go_side(1)
-            if event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE and game.statue == "start" :
                 pressing_down = True
-            if event.key == pygame.K_ESCAPE:
+            if event.key == pygame.K_ESCAPE :
                 game.__init__(20, 10)
-
+                ThemeT.stop()
+                ThemeT.play()
+                
 
 
 
@@ -233,7 +240,7 @@ while not done:
 
     for i in range(game.height):
         for j in range(game.width):
-            pygame.draw.rect(screen, GRIS, [game.x + game.zoom * j, game.y + game.zoom * i, game.zoom, game.zoom], 1)
+            pygame.draw.rect(screen, BLACK, [game.x + game.zoom * j, game.y + game.zoom * i, game.zoom, game.zoom], 1)
             if game.field[i][j] > 0:
                 pygame.draw.rect(screen, couleur[game.field[i][j]],
                                  [game.x + game.zoom * j + 1, game.y + game.zoom * i + 1, game.zoom - 2, game.zoom - 1])
@@ -265,9 +272,9 @@ while not done:
     if game.statue == "gameover": # On passe l'Ã©tat du jeux en mode game over
         screen.blit(texte_game_over, [50, 200])
         screen.blit(text_game_over1, [70, 250])
-
         
-
+        ThemeT.stop()
+        
 
     pygame.display.flip() 
     clock.tick(fps) # Le nombre d'image par seconde
